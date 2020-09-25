@@ -1,0 +1,39 @@
+<% include ./partials/header %>
+
+
+<div class="container pt-5" id="lcontainer">
+    <div class="d-flex justify-content-between align-items-start">
+        <h1 class="pb-5">Welcome to Orange Blogs</h1>
+        <% if(currentUser){ %>
+        <a href="/blog/new" style="color: #18bbd9; font-size: 40px;" class="mt-2 mr-2"><i class="far fa-plus-square"></i></a>
+        <% } %>
+    </div>
+    <% blogs.forEach(function(blog){ %>
+ 
+    <div class="d-flex flex-row listItem">
+            <div class="d-flex">
+                <img src="<%= blog.image %>" class="p-0 m-0 listImg">
+            </div>
+            <div class="flex-fill listTitle pl-3 pt-4">
+                <a href="/blog/<%= blog._id %>" style="color: white">
+                    <h4 class="pb-3"><%= blog.title %></h4>
+                </a>
+                <% 
+                    const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+                    a = blog.created_at;
+                    d = a.getDate();
+                    m = monthNames[a.getMonth()];
+                    y = a.getFullYear();
+                    h = a.getHours();
+                    mi = a.getMinutes();
+                %>
+                <p><%= h %>:<%= mi %></p>
+                <p><%= d %> <%= m %> <%= y %></p>
+            </div>
+    </div>
+    <br>
+    <% }) %>     
+</div>
+
+
+<% include ./partials/footer %>
