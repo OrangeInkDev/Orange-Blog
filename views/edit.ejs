@@ -1,0 +1,26 @@
+<% include ./partials/header %>
+
+<div class="container text-center">
+    <h1 class="formHead">Edit <%= blogs.title %></h1>
+    <div style="width: 50%; margin: 25px auto;">
+        <form action="/blog/<%= blogs._id %>?_method=PUT" method="POST">
+            <div class="form-group">
+                <input class="form-control" type="text" value="<%= blogs.title %>" name="blog[title]">
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="text" value="<%= blogs.image %>" name="blog[image]">
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="text" value="<%= blogs.content %>" name="blog[description]">
+            </div>
+            <div class="form-group">
+                <input class="btn btn-lg btn-outline-primary custom-btn p-3" type="submit">
+            </div>
+        </form>
+    </div>
+
+<a style="color: #18bbd9" href="/blog/<%= blogs._id %>">Go Back</a>
+</div>
+
+
+<% include ./partials/footer %>

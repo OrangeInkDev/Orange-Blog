@@ -1,0 +1,59 @@
+.listItem {
+    margin: 0;
+    padding: 0;
+    border: 1px solid #18bbd9;
+    border-radius: 8px;
+}
+
+.listTitle {
+    color: grey;
+    margin: 0;
+    padding: 0;
+    float: right;
+    display: inline-block;
+}
+
+.listImg {
+    width: 300px;
+    height: 200px;
+    border-radius: 8px;
+}
+
+.thumbnail {
+    padding: 0;
+    height: 200px;
+}
+
+.btn-outline-primary.custom-btn {
+    padding: 0;
+	color: #18bbd9; 
+	border-color: #18bbd9;
+}
+
+.btn-outline-primary.custom-btn:hover, .btn-primary.custom-btn:focus, .btn-primary.custom-btn:active {
+	color:black; 
+    border-color: #18bbd9;
+    background-color: #18bbd9;
+}
+
+body {
+    background-color: black;
+}
+
+#lcontainer {
+    background-color: black;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#lcontainer h1 {
+    color: #18bbd9;
+}
+
+#scontainer{
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.formHead {
+    color: #18bbd9;
+}
