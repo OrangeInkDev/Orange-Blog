@@ -1,5 +1,6 @@
 var express = require("express");
 var app = express();
+require("dotenv").config();
 var bodyParser = require("body-parser");
 var mongoose = require("mongoose");
 var passport = require("passport");
@@ -9,7 +10,7 @@ var User = require("./models/user");
 var middleware = require("./middleware")
 var Blog = require("./models/blog");
 
-mongoose.connect("mongodb://localhost:27017/orange_blog", {useNewUrlParser: true});
+mongoose.connect(process.env.DATABASEURL, {useNewUrlParser: true});
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(methodOverride("_method"));
 app.set("view engine", "ejs");
@@ -156,7 +157,7 @@ app.delete("/blog/:id",middleware.isLoggedIn, function(req,res){
     });
 });
 
-var port = process.env.PORT || 3000;
+var port = process.env.PORT;
 app.listen(port, function () {
     console.log("The Server Has Started!");
 });
