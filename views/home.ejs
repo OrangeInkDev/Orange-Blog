@@ -1,38 +1,113 @@
 <% include ./partials/header.ejs %>
 
-<section id="cover" class="align-middle" >
-
-     
-
-    <div class="container" id="landingMessage">
-      <div class="row align-items-center pt-5">
-        <h1>A platform for your thoughts</h1>
-        
-          
-      </div>
-      <div class="row">
-        <div class="d-flex" id="snippet">
-          <div class="p-2">Read</div>
-          <div class="p-2">|</div>
-          <div class="p-2">Write</div>
-          <div class="p-2">|</div>
-          <div class="p-2">Share</div>
-          <div class="p-2">|</div>
-          <div class="p-2">Grow</div>
-      </div>
-      </div>
+<section id="cover" class="py-5">
+  <div class="cover-caption">
+    <div class="container">
+      <h1>Welcome to OrangeInk Blogs</h1>
+      <p>A platorm for your thoughts</p>
+      <a href="/blog/submit">
+        <button type="button" class="btn btn-primary">Write for us</button>
+      </a>
     </div>
-
-    <div class="container mt-5" id="getStarted">
-      <a type="button" class="btn btn-primary">Get Started</a>
-    </div>
-    
-
-    <p id="bottomText">
-      An <strong>OrangeInk </strong> product 
-    </p>
-    
-
+  </div>
 </section>
+
+<section id="show">
+  <div class="container p-0">
+    <!-- <div class="recommended my-5 px-1 mx-2 mx-sm-0" id="recommendationHeading">
+          <h2 style="color:white;">Handpicked for you</h2>
+      </div> -->
+
+    <div class="card-group py-3 row">
+      <div class="col-lg-4 mb-3">
+        <div class="card mx-sm-2 mx-3 cardDisplay">
+          <a href="">
+            <img
+              class="card-img-top"
+              src="https://cdn.vox-cdn.com/thumbor/T49kxT-ZhzKjyWWWkVYiOIyAOv4=/1400x1400/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/11249379/jbareham_171101_2099_A_0088_02.jpg"
+              alt="Card image cap"
+            />
+          </a>
+          <div class="card-body">
+            <h5 class="card-title">
+              <a href="" style="color: white">Blog Title</a>
+            </h5>
+            <p class="card-text overflow-hidden">Blog Short Description</p>
+            <p class="card-text">
+              <small class="text-muted">Author Name</small>
+            </p>
+            <p class="card-text">
+              <small class="text-muted">Date</small>
+            </p>
+            <a href="">
+              <button type="button" class="btn btn-primary my-3">
+                Read More
+              </button>
+            </a>
+          </div>
+        </div>
         
+      </div>
+      <div class="col-lg-4 mb-3">
+        <div class="card mx-sm-2 mx-3 cardDisplay">
+          <a href="">
+            <img
+              class="card-img-top"
+              src="https://cdn.vox-cdn.com/thumbor/T49kxT-ZhzKjyWWWkVYiOIyAOv4=/1400x1400/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/11249379/jbareham_171101_2099_A_0088_02.jpg"
+              alt="Card image cap"
+            />
+          </a>
+          <div class="card-body">
+            <h5 class="card-title">
+              <a href="" style="color: white">Blog Title</a>
+            </h5>
+            <p class="card-text overflow-hidden">Blog Short Description</p>
+            <p class="card-text">
+              <small class="text-muted">Author Name</small>
+            </p>
+            <p class="card-text">
+              <small class="text-muted">Date</small>
+            </p>
+            <a href="">
+              <button type="button" class="btn btn-primary my-3">
+                Read More
+              </button>
+            </a>
+          </div>
+        </div>
+        
+      </div>
+      <div class="col-lg-4 mb-3">
+        <div class="card mx-sm-2 mx-3 cardDisplay">
+          <a href="">
+            <img
+              class="card-img-top"
+              src="https://cdn.vox-cdn.com/thumbor/T49kxT-ZhzKjyWWWkVYiOIyAOv4=/1400x1400/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/11249379/jbareham_171101_2099_A_0088_02.jpg"
+              alt="Card image cap"
+            />
+          </a>
+          <div class="card-body">
+            <h5 class="card-title">
+              <a href="" style="color: white">Blog Title</a>
+            </h5>
+            <p class="card-text overflow-hidden">Blog Short Description</p>
+            <p class="card-text">
+              <small class="text-muted">Author Name</small>
+            </p>
+            <p class="card-text">
+              <small class="text-muted">Date</small>
+            </p>
+            <a href="">
+              <button type="button" class="btn btn-primary my-3">
+                Read More
+              </button>
+            </a>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</section>
+
 <% include ./partials/footer %>
