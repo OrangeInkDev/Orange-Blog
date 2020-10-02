@@ -1,7 +1,31 @@
+:root{
+    --red-hue: 356;
+    --blue-hue: 212;
+    --green-hue: 87;
+    --color-bright: 23%;
+    --main-hue : var(--red-hue);
+
+    --theme-hue: 100%;
+    --theme-hue-nav: 0%;
+  }
+
+.theme-button {
+    padding-left: 5px;
+    border-radius: 10px;
+}
+
+nav {
+    background-color: hsl(0, 0%, var(--theme-hue-nav));
+}
+
+nav a{
+    color: hsl(0, 85%, var(--theme-hue)) !important;
+}
+
 .listItem {
     margin: 0;
     padding: 0;
-    border: 1px solid #18bbd9;
+    border: 1px solid hsl(var(--main-hue), 50%, var(--color-bright));
     border-radius: 8px;
 }
 
@@ -9,7 +33,6 @@
     color: grey;
     margin: 0;
     padding: 0;
-    float: right;
     display: inline-block;
 }
 
@@ -26,27 +49,27 @@
 
 .btn-outline-primary.custom-btn {
     padding: 0;
-	color: #18bbd9; 
-	border-color: #18bbd9;
+	color: hsl(var(--main-hue), 50%, var(--color-bright));
+	border-color: hsl(var(--main-hue), 50%, var(--color-bright));
 }
 
 .btn-outline-primary.custom-btn:hover, .btn-primary.custom-btn:focus, .btn-primary.custom-btn:active {
 	color:black; 
-    border-color: #18bbd9;
-    background-color: #18bbd9;
+    border-color: hsl(var(--main-hue), 50%, var(--color-bright));
+    background-color: hsl(var(--main-hue), 50%, var(--color-bright));
 }
 
 body {
-    background-color: black;
+    background-color: hsl(0, 85%, var(--theme-hue));
 }
 
 #lcontainer {
-    background-color: black;
+    background-color: hsl(var(--main-hue), 100%, 83%);
     font-family: 'Montserrat', sans-serif;
 }
 
 #lcontainer h1 {
-    color: #18bbd9;
+    color: hsl(var(--main-hue), 50%, var(--color-bright));
 }
 
 #scontainer{
@@ -55,5 +78,5 @@ body {
 }
 
 .formHead {
-    color: #18bbd9;
+    color: hsl(var(--main-hue), 50%, var(--color-bright));
 }
