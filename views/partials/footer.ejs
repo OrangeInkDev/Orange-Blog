@@ -1,2 +1,37 @@
+        <script>
+            document.body.onload = () => {
+
+                const redBtn = document.querySelector('#toggle-red');
+                const blueBtn = document.querySelector('#toggle-blue');
+                const greenBtn = document.querySelector('#toggle-green');
+                const whiteBtn = document.querySelector('#toggle-white');
+                const blackBtn = document.querySelector('#toggle-black');
+
+                redBtn.addEventListener('click', (e) => {
+
+                    console.log("red");
+                    document.documentElement.style.setProperty('--main-hue', 360);
+                })
+
+                blueBtn.addEventListener('click', (e) => {
+                    document.documentElement.style.setProperty('--main-hue', 240);
+                })
+
+                greenBtn.addEventListener('click', (e) => {
+                    document.documentElement.style.setProperty('--main-hue', 120);
+                })
+
+                whiteBtn.addEventListener('click', (e) => {
+                    document.documentElement.style.setProperty('--theme-hue', "100%");
+                    document.documentElement.style.setProperty('--theme-hue-nav', "0%");
+                    document.documentElement.style.setProperty('--color-bright', "23%");
+                })
+                blackBtn.addEventListener('click', (e) => {
+                    document.documentElement.style.setProperty('--theme-hue', "0%");
+                    document.documentElement.style.setProperty('--theme-hue-nav', "32%");
+                    document.documentElement.style.setProperty('--color-bright', "63%");
+                })
+            }
+        </script>
     </body>
 </html>
