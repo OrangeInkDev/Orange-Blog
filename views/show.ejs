@@ -1,16 +1,10 @@
-<% include ./partials/header %>
+<% include ./partials/header %> <% const monthNames = ["january", "february",
+"march", "april", "may", "june", "july", "august", "september", "october",
+"november", "december"]; a = blog.created_at; d = a.getDate(); m =
+monthNames[a.getMonth()]; y = a.getFullYear(); h = a.getHours(); mi =
+a.getMinutes(); %>
 
-<% 
-const monthNames = ["january", "february", "march", "april", "may", "june", "july", "august", "september", "october", "november", "december"];
-a = blog.created_at;
-d = a.getDate();
-m = monthNames[a.getMonth()];
-y = a.getFullYear();
-h = a.getHours();
-mi = a.getMinutes();
-%>
-
-<div class="container" id="scontainer">
+<!-- <div class="container" id="scontainer">
     <h1 class="mt-4 mb-3"><%= blog.title %></h1>
     <h4 class="mb-3"><%= blog.author.username %></h4>
     <p style="color: grey"><%= d %> <%= m %> <%= y %> &nbsp|&nbsp <%= h %>:<%= mi %> </p>
@@ -24,6 +18,168 @@ mi = a.getMinutes();
             <button class="btn btn-outline-danger ml-2">Delete</button>
         </form>
     </div>
+</div> -->
+
+<div class="container pt-5" style="color: white">
+  <h1>Blog Title</h1>
 </div>
+
+<section id="authorDetails">
+  <div class="container pt-5">
+    <div class="row">
+      <div class="col-2 d-inline-flex">
+        <img
+          id="dp"
+          width="100px"
+          height="100px"
+          style="object-fit: contain"
+          src="https://i.pinimg.com/originals/67/c1/32/67c132e245d09d290df7bfe4404bc0c5.png"
+          class="rounded-circle"
+          alt="waifu"
+        />
+      </div>
+      <div class="col ml-md-5 ml-lg-0" id="authorId">
+        <div class="row d-flex flex-row">
+          <h5>Kosaki Onodera</h5>
+        </div>
+
+        <div class="row d-flex flex-row align-items-center" id="authorBio">
+          <p class="text-muted mb-0">Author Details</p>
+        </div>
+
+        <div class="row d-inline-flex date">
+          <div class="py-2 pl-0">10:30</div>
+          <div class="py-2 mx-2">|</div>
+          <div class="py-2">5 min read</div>
+        </div>
+        <div
+          id="quickLink"
+          class="ml-2 ml-lg-0"
+          style="position: relative; left: -30"
+        >
+          <a href=""
+            ><i class="fab fa-facebook-square px-2 pt-0 px-lg-3"></i
+          ></a>
+
+          <a href=""><i class="fab fa-twitter px-2 pt-0 px-lg-3"></i></a>
+
+          <a href=""><i class="fab fa-linkedin-in px-2 pt-0 px-lg-3"></i></a>
+
+          <a href=""><i class="fab fa-instagram px-2 pt-0 px-lg-3"></i></a>
+
+          <a href=""><i class="fab fa-github px-2 pt-0 px-lg-3"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="content">
+  <div class="container">
+    <div class="row pt-5">
+      <img
+        id="coverImg"
+        src="<%= blog.image %>"
+        alt="mac"
+        width="100%"
+        height="auto"
+      />
+    </div>
+    <div class="pt-5" id="writeUp" style="width: 100%"><%= blog.content %></div>
+  </div>
+</section>
+
+<div class="d-flex align-items-start container my-3">
+  <a href="/blog/<%= blog._id %>/edit"
+    ><button class="btn btn-outline-success">Edit</button></a
+  >
+  <form
+    class="delete-form"
+    action="/blog/<%= blog._id %>?_method=DELETE"
+    method="POST"
+  >
+    <button class="btn btn-outline-danger ml-2">Delete</button>
+  </form>
+</div>
+
+<section id="recommendation">
+  <div class="container p-0">
+    <div class="recommended my-5 px-1 mx-2 mx-sm-0" id="recommendationHeading">
+      <h2 style="color: white">Recommended for you</h2>
+    </div>
+
+    <div class="card-group">
+      <div class="card mx-sm-2 mx-3 cardDisplay">
+        <img
+          class="card-img-top"
+          src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone11-select-2019-family?wid=882&hei=1058&fmt=jpeg&qlt=80&op_usm=0.5,0.5&.v=1567022175704"
+          alt="Card image cap"
+        />
+        <div class="card-body">
+          <h5 class="card-title">Blog Title</h5>
+          <p class="card-text overflow-hidden" style="height: 10rem">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam quo
+            explicabo iure quis aliquid non, animi reiciendis temporibus
+            obcaecati facilis quae tempore officia vel iusto sequi molestiae,
+            maiores magnam. Non.
+          </p>
+          <p class="card-text"><small class="text-muted">Author Name</small></p>
+          <p class="card-text">
+            <small class="text-muted">Date : 23/5/2020</small>
+          </p>
+        </div>
+        <div class="container">
+          <button type="button" class="btn btn-primary my-3">Read More</button>
+        </div>
+      </div>
+      <div class="card mx-sm-2 mx-3 cardDisplay">
+        <img
+          class="card-img-top"
+          src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone11-select-2019-family?wid=882&hei=1058&fmt=jpeg&qlt=80&op_usm=0.5,0.5&.v=1567022175704"
+          alt="Card image cap"
+        />
+        <div class="card-body">
+          <h5 class="card-title">Blog Title</h5>
+          <p class="card-text overflow-hidden" style="height: 10rem">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam quo
+            explicabo iure quis aliquid non, animi reiciendis temporibus
+            obcaecati facilis quae tempore officia vel iusto sequi molestiae,
+            maiores magnam. Non.
+          </p>
+          <p class="card-text"><small class="text-muted">Author Name</small></p>
+          <p class="card-text">
+            <small class="text-muted">Date : 23/5/2020</small>
+          </p>
+        </div>
+        <div class="container">
+          <button type="button" class="btn btn-primary my-3">Read More</button>
+        </div>
+      </div>
+      <div class="card mx-sm-2 mx-3 cardDisplay">
+        <img
+          class="card-img-top"
+          src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone11-select-2019-family?wid=882&hei=1058&fmt=jpeg&qlt=80&op_usm=0.5,0.5&.v=1567022175704"
+          alt="Card image cap"
+        />
+        <div class="card-body">
+          <h5 class="card-title">Blog Title</h5>
+          <p class="card-text overflow-hidden" style="height: 10rem">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam quo
+            explicabo iure quis aliquid non, animi reiciendis temporibus
+            obcaecati facilis quae tempore officia vel iusto sequi molestiae,
+            maiores magnam. Non.
+          </p>
+          <p class="card-text"><small class="text-muted">Author Name</small></p>
+          <p class="card-text">
+            <small class="text-muted">Date : 23/5/2020</small>
+          </p>
+        </div>
+        <div class="container">
+          <button type="button" class="btn btn-primary my-3">Read More</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <% include ./partials/footer %>
